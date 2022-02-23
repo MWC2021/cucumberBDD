@@ -25,12 +25,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import lombok.Getter;
-import lombok.Setter;
 
-
-@Getter
-@Setter
 
 public class MasterPageFactory {
 	
@@ -51,5 +46,39 @@ public class MasterPageFactory {
 	private List<WebElement> signOffList;// findElements() ==> object 8 >> get(7)
 	@FindBy(xpath = "//*[text()='Login Successfully']")
 	private WebElement loginStatusSuccessMsg;
+	
+	
+	public WebElement getUserName() 
+	{
+		return userName;
+	}
+	public WebElement getPassword() 
+	{
+		return password;
+	}
+	public WebElement getSubmit() {
+		return submit;
+	}
+	public void setSubmit(WebElement submit) {
+		this.submit = submit;
+	}
+	public WebElement getSignOff() {
+		return signOff;
+	}
+	public void setSignOff(WebElement signOff) {
+		this.signOff = signOff;
+	}
+	public List<WebElement> getSignOffList() {
+		return signOffList;
+	}
+	public void setSignOffList(List<WebElement> signOffList) {
+		this.signOffList = signOffList;
+	}
+	public WebElement getLoginStatusSuccessMsg() {
+		return loginStatusSuccessMsg;
+	}
+	public void setLoginStatusSuccessMsg(WebElement loginStatusSuccessMsg) {
+		this.loginStatusSuccessMsg = loginStatusSuccessMsg;
+	}
 	
 }

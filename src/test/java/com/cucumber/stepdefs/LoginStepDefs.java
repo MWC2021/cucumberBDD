@@ -19,7 +19,6 @@
 package com.cucumber.stepdefs;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.generic.BaseConfig;
@@ -47,27 +46,27 @@ public class LoginStepDefs
 		driver = CrossBrowserCheck.browserCheck("chrome");
 	}
 
-	@And("go to application URL")
-	public void getURL() throws Exception
+	@And("go to application URL {string}")
+	public void getURL(String url) throws Exception
 	{
-		driver.get(BC.getValue("url"));
+		driver.get(BC.getValue(url));
 		driver.manage().window().maximize();
 	}
 
-	@When("put valid username")
-	public void getUsername() throws Exception
+	@When("put valid username {string}")
+	public void getUsername(String user) throws Exception
 	{
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		//highLighter.getColor(driver, MPF.getUserName(), "Tomato");
-		MPF.getUserName().sendKeys(BC.getValue("user"));
+		MPF.getUserName().sendKeys(BC.getValue(user));
 	}
 
-	@And("put valid password")
-	public void getPassword() throws Exception
+	@And("put valid password {string}")
+	public void getPassword(String pass) throws Exception
 	{
 		MasterPageFactory MPF = new MasterPageFactory(driver);
 		//highLighter.getColor(driver, MPF.getPassword(),"Olive");
-		MPF.getPassword().sendKeys(BC.getValue("password"));
+		MPF.getPassword().sendKeys(BC.getValue(pass));
 	}
 
 	@And("click signin button")
